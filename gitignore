@@ -1,0 +1,69 @@
+# ============================================================
+# MiniFPGA v0.1 - .gitignore
+# Verilog (Icarus / GTKWave) + LaTeX (Overleaf) + editor/OS junk
+# ============================================================
+
+# ---------- Simulation outputs (regenerate with iverilog/vvp) ----------
+*.out
+*.vvp
+*.vcd
+*.fst
+*.lxt
+*.lxt2
+*.ghw
+*.evcd
+sim/
+build/
+
+# Keep GTKWave save files (*.gtkw): they store which signals are shown,
+# so anyone can reopen the same view for screenshots.
+!*.gtkw
+
+# ---------- Synthesis / other tool outputs ----------
+*.log
+*.jou
+*.str
+*.bak
+*.orig
+yosys_*.json
+*.blif
+*.edif
+
+# ---------- LaTeX build files (Overleaf compiles the PDF itself) ----------
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.toc
+*.nav
+*.snm
+*.vrb
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+*.dvi
+*-blx.bib
+_minted*/
+*.figlist
+*.makefile
+*.auxlock
+
+# ---------- Editors ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.code-workspace
+.idea/
+*.swp
+*.swo
+*~
+
+# ---------- OS ----------
+.DS_Store
+Thumbs.db
+desktop.ini
