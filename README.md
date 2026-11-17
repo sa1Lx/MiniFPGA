@@ -11,7 +11,7 @@ git pull
 git checkout -b <your-name>/<short-task>
 ```
 
-Branch name example: `shyam/config-loader`. One branch = one task.
+Branch name example: `sailesh/config-loader`. One branch = one task.
 
 ## While working
 
@@ -48,7 +48,8 @@ git push -u origin <your-name>/<short-task>
 - Write a title and one or two lines on what changed and how you tested it.
 - Click **Create pull request**.
 
-<!-- screenshot: the "Compare & pull request" banner -->
+![Open a pull request page with base main, a title and description filled in](readme-images/create_pr.png)
+*Opening a PR: base is `main`, compare is your branch. Add a title and a short description, then click **Create pull request**.*
 
 **4. Merge it:**
 
@@ -56,7 +57,14 @@ git push -u origin <your-name>/<short-task>
 - Click the arrow next to the merge button → **Squash and merge** → **Confirm**.
 - Click **Delete branch**.
 
-<!-- screenshot: the merge-button dropdown showing "Squash and merge" -->
+![Merge button dropdown with Squash and merge highlighted](readme-images/squash_merge.png)
+*Click the arrow next to **Merge pull request** and choose **Squash and merge**.*
+
+![Squash commit message box with the Confirm squash and merge button](readme-images/confirm_squash.png)
+*Check the squashed commit message (GitHub appends the PR number), then click **Confirm squash and merge**.*
+
+![Pull request merged banner with the Delete branch button](readme-images/delete_branch.png)
+*Once merged, click **Delete branch** to remove your branch from GitHub.*
 
 **5. Clean up locally:**
 
