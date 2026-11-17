@@ -81,6 +81,19 @@ git branch -D <your-name>/<short-task>
 - Delete your branch after merging.
 - Keep PRs small: one task each.
 - Don't commit generated files (`.gitignore` handles most of them).
+- `report/` is edited only in Overleaf, and code is edited only through git (see below).
+
+## The report (Overleaf)
+
+The LaTeX report lives in `report/` and is edited in Overleaf, not through branches and PRs.
+
+- Open the shared Overleaf project and edit files under `report/`.
+- To save to GitHub: **Menu → GitHub → Push Overleaf changes to GitHub**. This goes straight to `main`, no PR.
+- To get the latest code or figures into Overleaf: **Menu → GitHub → Pull GitHub changes into Overleaf**. Do this before you start editing.
+- Overleaf shows the whole repo, but only touch `report/`. Don't edit Verilog files in Overleaf.
+- Don't edit `report/` from your local clone. That way Overleaf and PRs never touch the same files, so they can't conflict.
+
+Overleaf's commits land on `main` like any other, so `git pull` and `git rebase origin/main` pick them up as usual.
 
 ## Quick reference
 
@@ -97,6 +110,8 @@ git checkout main && git pull && git branch -D name/task
 
 ## Repo owner: one-time settings
 
-**Settings → General → Pull Requests:** untick *Allow merge commits* and *Allow rebase merging*, keep *Allow squash merging*, tick *Automatically delete head branches*.
+**Settings → General → Pull Requests:** untick *Allow merge commits* and *Allow rebase merging*, keep *Allow squash merging*. Leave *Automatically delete head branches* unticked; we delete branches by hand.
 
-**Settings → Branches → Add rule** for `main`: tick *Require a pull request before merging*, set required approvals to **0**.
+**Settings → Branches → Add rule** for `main`: tick *Require a pull request before merging*, set required approvals to **0**. Leave *Do not allow bypassing the above settings* unticked, so Overleaf (which pushes as the owner) can still push the report straight to `main`.
+
+**Overleaf (owner only, once):** in Overleaf, **New Project → Import from GitHub → MiniFPGA**, then **Menu → Main document → `report/main.tex`**. GitHub sync needs a premium Overleaf account (personal, group, or institutional).
